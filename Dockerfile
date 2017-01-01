@@ -6,4 +6,4 @@ RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 RUN gpasswd -a jenkins root
 USER jenkins
 RUN echo "alias docker='sudo docker'" >> ~/.bashrc
-RUN source ~/.bashrc
+RUN ["/bin/bash", "-c", "source ~/.bashrc"]
